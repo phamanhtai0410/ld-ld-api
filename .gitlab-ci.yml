@@ -7,8 +7,7 @@ variables:
   CONTAINER_REPO_ASIA_TESTNET: 968557029040.dkr.ecr.ap-southeast-1.amazonaws.com/test/inz-api
 
  # CONTAINER_REPO_ASIA_PROD: harbor.atomsolution.vn/pos/gw_transaaction_service
-  NAMESPACE_STAG: ld-website-stag
-  NAMESPACE_TESTNET: inz-api-testnet
+  NAMESPACE_STAG: ld-website-testnet
 
   NAMESPACE_PROD: gateway
 
