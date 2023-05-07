@@ -3,31 +3,18 @@ import os
 
 from web3 import Web3
 from dotenv import load_dotenv
-from redis.cluster import RedisCluster, ClusterNode
+from redis import Redis
 import csv
 
 load_dotenv()
 
-startup_nodes = json.loads(os.getenv('REDIS_CLUSTER', '[]'))
-nodes = list()
-for node in startup_nodes:
-    nodes.append(ClusterNode(host=node['host'], port=node['port']))
-
 if os.getenv('REDIS_PASSWORD'):
-    ssl_redis = bool(int(os.getenv("SSL", "0")))
-    print('ssl', ssl_redis)
-    redis = RedisCluster(startup_nodes=nodes,
-                         # host=os.getenv("REDIS_AUTH_HOST"),
-                         # port=int(os.getenv("REDIS_AUTH_PORT")),
-                         decode_responses=True,
-                         ssl=ssl_redis,
-                         skip_full_coverage_check=True,
-                         password=os.getenv('REDIS_PASSWORD'))
+    redis = Redis(host=os.getenv('REDIS_HOST'),
+                  port=int(os.getenv('REDIS_PORT')),
+                  password=os.getenv('REDIS_PASSWORD'))
 else:
-    redis = RedisCluster(startup_nodes=nodes,
-                         decode_responses=True,
-                         skip_full_coverage_check=True)
-
+    redis = Redis(host=os.getenv('REDIS_HOST'),
+                  port=int(os.getenv('REDIS_PORT')))
 # address = "0x183Ff214179cd2B1c06A937D663F192340edd159".lower()
 # redis.set(f"ladys:whitelist:{address}", 1)
 _web3 = Web3()
@@ -51,4 +38,4 @@ with open('whitelist_holder.csv') as csv_file:
                 print(f'\t{row[0]} .... is not a address')
             line_count += 1
 
-    print(f'Processed {line_count-1} lines. Done: {done_address} Error: {fail_address}')
+    print(f'Processed {line_count - 1} lines. Done: {done_address} Error: {fail_address}')
