@@ -15,7 +15,7 @@ if os.getenv('REDIS_PASSWORD'):
 else:
     redis = Redis(host=os.getenv('REDIS_HOST'),
                   port=int(os.getenv('REDIS_PORT')))
-# address = "0x183Ff214179cd2B1c06A937D663F192340edd159".lower()
+# address = "0x40469BdF7De2a67fE4138D248dbdfa5585F8937B".lower()
 # redis.set(f"ladys:whitelist:{address}", 1)
 _web3 = Web3()
 with open('whitelist_holder.csv') as csv_file:
