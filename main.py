@@ -19,8 +19,6 @@ nodes = list()
 # print('nodes', nodes)
 
 if os.getenv('REDIS_PASSWORD'):
-    ssl_redis = bool(int(os.getenv("SSL", "0")))
-    print('ssl', ssl_redis)
     redis = Redis(host=os.getenv('REDIS_HOST'),
                   port=int(os.getenv('REDIS_PORT')),
                   password=os.getenv('REDIS_PASSWORD'))
