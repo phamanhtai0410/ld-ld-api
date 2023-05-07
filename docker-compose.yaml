@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  dapp-web:
+   image: test:latest
+   build:
+       context: .
+       dockerfile: Dockerfile
+    restart: always
+#    volumes:
+#      - ./:/webapps
+    ports:
+      - 80:80
+    networks:
+      - base-network
+
+networks:
+  base-network:
+    external: true

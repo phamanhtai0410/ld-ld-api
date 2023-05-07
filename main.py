@@ -11,7 +11,6 @@ load_dotenv()
 
 app = FastAPI()
 
-startup_nodes = json.loads(os.getenv('REDIS_CLUSTER', '[]'))
 PRIVATE_KEY = os.getenv("PRIVATE_KEY")
 nodes = list()
 # for node in startup_nodes:
