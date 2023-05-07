@@ -1,4 +1,4 @@
-FROM 968557029040.dkr.ecr.ap-southeast-1.amazonaws.com/esollabs/cicd:sh-python-ba4ec63-dirty
+FROM 3.8.16-alpine3.17
 
 
 COPY requirements.txt /
