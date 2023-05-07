@@ -8,4 +8,4 @@ RUN pip --no-cache-dir install "Flask[async]"
 
 COPY . /webapps
 WORKDIR /webapps
-CMD ["uvicorn main:app --host 0.0.0.0 --port 5005 --workers 4"]
+CMD ["/usr/local/bin/python /usr/local/bin/uvicorn main:app --host 0.0.0.0 --port 5005 --workers 4"]
