@@ -38,7 +38,7 @@ chainId = int(os.getenv('CHAIN_ID'))
 airdrop_smc = os.getenv('AIRDROP_SMC', '').lower()
 airdrop_smc = _web3.toChecksumAddress(airdrop_smc)
 
-@app.get("/common/health_check")
+@app.get("api/common/health_check")
 async def health_check():
     return {"api": "success"}
 
@@ -66,7 +66,7 @@ def generate_signature(user):
     return _signed_message.signature.hex()
 
 
-@app.get("/airdrop/{address}")
+@app.get("api/airdrop/{address}")
 async def airdrop(address: str):
     address = address.lower()
     _amount = redis.get(f"ladys:whitelist:{address}")
