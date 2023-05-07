@@ -5,6 +5,5 @@ venv
 .env
 deployments/*
 env
-whitelist.csv
 .gitlab-ci.yml
 skaffold.yaml
