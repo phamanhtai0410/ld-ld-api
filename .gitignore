@@ -6,3 +6,5 @@ venv
 deployments/*
 env
 whitelist.csv
+.gitlab-ci.yml
+skaffold.yaml
