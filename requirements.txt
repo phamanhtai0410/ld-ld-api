@@ -3,3 +3,4 @@ pydantic
 uvicorn
 redis==4.5.4
 web3==5.24.0
+python-dotenv==1.0.0
