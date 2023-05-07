@@ -2,7 +2,7 @@ version: "3"
 
 services:
   dapp-web:
-    image: test:latest
+   image: test:latest
    build:
        context: .
        dockerfile: Dockerfile
