@@ -13,9 +13,9 @@ app = FastAPI()
 
 PRIVATE_KEY = os.getenv("PRIVATE_KEY")
 nodes = list()
-for node in startup_nodes:
-    nodes.append(ClusterNode(host=node['host'], port=node['port']))
-print('nodes', nodes)
+# for node in startup_nodes:
+#     nodes.append(ClusterNode(host=node['host'], port=node['port']))
+# print('nodes', nodes)
 
 if os.getenv('REDIS_PASSWORD'):
     redis = Redis(host=os.getenv('REDIS_HOST'),
