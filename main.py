@@ -71,7 +71,7 @@ async def airdrop(address: str):
 
 @app.get("/api/staking/{campaignId}")
 async def staking(campaignId: int):
-    _current_active_campaign_id = 1
+    _current_active_campaign_id = 2
     _current_campaign_details = {
         "poolList": [
             {
@@ -100,6 +100,15 @@ async def staking(campaignId: int):
                 "follow": "32,352,623",
                 "id": "3",
                 "link": "https://twitter.com/lindayacc/media",
+            },
+            {
+                "campaignId": 1,
+                "title": "@xxx",
+                "image": "https://static.esollabs.com/collections/642589e3577ebbec0b002938/2023/06/17/1687015678_2510fbc2-a3cf-4e74-863d-fb5389c8249d.png",
+                "name": "Linda Yaccarino",
+                "follow": "xx,xxx,xxx",
+                "id": "4",
+                "link": "https://twitter.com/xxx/media",
             }
         ]
     }
