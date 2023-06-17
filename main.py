@@ -77,7 +77,7 @@ async def staking(campaignId: int):
             {
                 "campaignId": 1,
                 "title": "@elonmusk",
-                "image": "musk_url",
+                "image": "https://static.esollabs.com/collections/642589e3577ebbec0b002938/2023/06/17/1687015584_3bea7408-a9b5-4064-bd2a-88d0eb94982d.png",
                 "name": "Elon Musk",
                 "follow": "143,852,623",
                 "id": "1",
@@ -86,7 +86,7 @@ async def staking(campaignId: int):
             {
                 "campaignId": 1,
                 "title": "@Grimezsz",
-                "image": "gri_url",
+                "image": "https://static.esollabs.com/collections/642589e3577ebbec0b002938/2023/06/17/1687015649_3bbeb031-191d-423e-8256-2d77bfeb136e.png",
                 "name": "Grimes",
                 "follow": "2,352,623",
                 "id": "2",
@@ -95,7 +95,7 @@ async def staking(campaignId: int):
             {
                 "campaignId": 1,
                 "title": "@lindayacc",
-                "image": "linda_url",
+                "image": "https://static.esollabs.com/collections/642589e3577ebbec0b002938/2023/06/17/1687015664_c8df8382-0f86-4a85-b1bb-fd7f5384a2ba.png",
                 "name": "Linda Yaccarino",
                 "follow": "32,352,623",
                 "id": "3",
