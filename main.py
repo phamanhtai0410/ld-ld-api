@@ -13,9 +13,9 @@ app = FastAPI()
 
 PRIVATE_KEY = os.getenv("PRIVATE_KEY")
 nodes = list()
-# for node in startup_nodes:
-#     nodes.append(ClusterNode(host=node['host'], port=node['port']))
-# print('nodes', nodes)
+for node in startup_nodes:
+    nodes.append(ClusterNode(host=node['host'], port=node['port']))
+print('nodes', nodes)
 
 if os.getenv('REDIS_PASSWORD'):
     redis = Redis(host=os.getenv('REDIS_HOST'),
@@ -68,3 +68,41 @@ async def airdrop(address: str):
 
     signature = generate_signature(address)
     return {"signature": signature}
+
+@app.get("/api/staking/{campaignId}")
+async def staking(campaignId: int):
+    _current_active_campaign_id = 1
+    _current_campaign_details = {
+        "poolList": [
+            {
+                "campaignId": 1,
+                "title": "@elonmusk",
+                "image": "musk_url",
+                "name": "Elon Musk",
+                "follow": "143,852,623",
+                "id": "1",
+                "link": "https://twitter.com/elonmusk/media",
+            },
+            {
+                "campaignId": 1,
+                "title": "@Grimezsz",
+                "image": "gri_url",
+                "name": "Grimes",
+                "follow": "2,352,623",
+                "id": "2",
+                "link": "https://twitter.com/Grimezsz/media",
+            },
+            {
+                "campaignId": 1,
+                "title": "@lindayacc",
+                "image": "linda_url",
+                "name": "Linda Yaccarino",
+                "follow": "32,352,623",
+                "id": "3",
+                "link": "https://twitter.com/lindayacc/media",
+            }
+        ]
+    }
+    if campaignId != _current_active_campaign_id:
+        raise HTTPException(status_code=400, detail="Campaign with this ID is not available now")
+    return _current_campaign_details
