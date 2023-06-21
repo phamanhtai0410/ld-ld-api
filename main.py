@@ -71,7 +71,7 @@ async def airdrop(address: str):
 
 @app.get("/api/staking/{campaignId}")
 async def staking(campaignId: int):
-    _current_active_campaign_id = 2
+    _current_active_campaign_id = 3
     _current_campaign_details = {
         "poolList": [
             {
